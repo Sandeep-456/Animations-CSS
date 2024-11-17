@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ball {
+    background-color: transparent;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 40px 8px red;
+}
+
+.name {
+    color: white;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 8px red;
+}
+
+.box {
+    height: 100px;
+    width: 300px;
+    background-color: blue;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.8;
+    position: relative;
+    top: 500px;
+    transform-origin: 10px 10px;
+    animation: slide-right 1s ease,
+        swing 2s 3s ease forwards;
+}
+
+.box-name {
+    color: white;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/*-------pop-up animation starts here------*/
+
+#pop-up {
+    position: relative;
+    top: -400px;
+    left: 20%;
+    animation: drop 1.5s ease forwards;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(700px);
+    }
+
+    100% {
+        transform: translateY(630px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-400px);
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    40% {
+        transform: rotateZ(90deg);
+    }
+
+    70% {
+        transform: rotateZ(70deg);
+    }
+
+    100% {
+        transform: rotateZ(75deg);
+    }
+}
